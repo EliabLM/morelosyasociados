@@ -17,19 +17,20 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    'abogados',
-    'firma legal',
-    'derecho corporativo',
-    'derecho laboral',
-    'derecho fiscal',
-    'litigio',
-    'México',
+    'logística',
+    'manipulación de carga',
+    'transporte',
+    'almacenamiento',
+    'distribución',
+    'carga',
+    'Colombia',
+    'Cartagena',
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   openGraph: {
     type: 'website',
-    locale: 'es_MX',
+    locale: 'es_CO',
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
@@ -52,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <body className={`${inter.variable} antialiased`}>
         <div className="relative flex min-h-screen flex-col">
           <Header />

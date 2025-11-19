@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Scale } from 'lucide-react';
+import { ArrowRight, Package } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function HeroSection() {
@@ -21,24 +21,24 @@ export function HeroSection() {
             className="space-y-6"
           >
             <div className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium bg-secondary/10 text-secondary-foreground">
-              <Scale className="mr-2 h-4 w-4" />
-              Excelencia Legal desde 1995
+              <Package className="mr-2 h-4 w-4" />
+              Soluciones Logísticas en Cartagena
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              Soluciones Legales{' '}
-              <span className="text-primary">Profesionales</span> para su Empresa
+              Manipulación de Carga{' '}
+              <span className="text-primary">Profesional</span> y Confiable
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-xl">
-              Somos una firma de abogados comprometida con brindar asesoría legal
-              de excelencia, protegiendo sus intereses con dedicación y profesionalismo.
+              Somos una empresa especializada en manipulación de carga y soluciones
+              logísticas integrales, comprometidos con la eficiencia y seguridad de su mercancía.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild>
                 <Link href="/contacto">
-                  Agendar Consulta
+                  Solicitar Cotización
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -59,7 +59,7 @@ export function HeroSection() {
           >
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 p-8">
               <div className="w-full h-full rounded-xl bg-card shadow-2xl flex items-center justify-center">
-                <Scale className="h-32 w-32 text-primary/50" />
+                <Package className="h-32 w-32 text-primary/50" />
               </div>
             </div>
           </motion.div>

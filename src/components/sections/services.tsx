@@ -2,46 +2,46 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Briefcase, Building, FileText, Scale, Shield, Users } from 'lucide-react';
+import { ArrowRight, Package, Warehouse, Truck, Settings, Shield, Clock } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 const services = [
   {
-    title: 'Derecho Corporativo',
-    description: 'Asesoría integral en constitución de empresas, fusiones, adquisiciones y gobierno corporativo.',
-    icon: Building,
-    href: '/servicios/derecho-corporativo',
+    title: 'Manipulación de Carga',
+    description: 'Cargue y descargue de mercancías con personal capacitado y equipos especializados para garantizar la integridad de su producto.',
+    icon: Package,
+    href: '/servicios/manipulacion-de-carga',
   },
   {
-    title: 'Derecho Laboral',
-    description: 'Representación en conflictos laborales, contratos y cumplimiento de normativas.',
-    icon: Users,
-    href: '/servicios/derecho-laboral',
+    title: 'Almacenamiento',
+    description: 'Espacios seguros y organizados para el resguardo temporal o prolongado de su mercancía con control de inventario.',
+    icon: Warehouse,
+    href: '/servicios/almacenamiento',
   },
   {
-    title: 'Derecho Fiscal',
-    description: 'Planificación fiscal estratégica, defensa ante autoridades y cumplimiento tributario.',
-    icon: FileText,
-    href: '/servicios/derecho-fiscal',
+    title: 'Transporte y Distribución',
+    description: 'Servicio de transporte terrestre confiable para la distribución de su carga a nivel local y regional.',
+    icon: Truck,
+    href: '/servicios/transporte-distribucion',
   },
   {
-    title: 'Litigio Civil',
-    description: 'Representación en juicios civiles, mercantiles y resolución de controversias.',
-    icon: Scale,
-    href: '/servicios/litigio-civil',
+    title: 'Logística Integral',
+    description: 'Soluciones completas que integran almacenamiento, manipulación y distribución para optimizar su cadena de suministro.',
+    icon: Settings,
+    href: '/servicios/logistica-integral',
   },
   {
-    title: 'Propiedad Intelectual',
-    description: 'Registro y protección de marcas, patentes, derechos de autor y secretos industriales.',
+    title: 'Carga Especializada',
+    description: 'Manejo de mercancías que requieren cuidados especiales: frágiles, sobredimensionadas o de alto valor.',
     icon: Shield,
-    href: '/servicios/propiedad-intelectual',
+    href: '/servicios/carga-especializada',
   },
   {
-    title: 'Derecho Inmobiliario',
-    description: 'Contratos de compraventa, arrendamiento, fideicomisos y desarrollo inmobiliario.',
-    icon: Briefcase,
-    href: '/servicios/derecho-inmobiliario',
+    title: 'Servicios Express',
+    description: 'Atención prioritaria para operaciones urgentes con tiempos de respuesta reducidos.',
+    icon: Clock,
+    href: '/servicios/servicios-express',
   },
 ];
 
@@ -66,11 +66,11 @@ export function ServicesSection() {
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Nuestras Áreas de Práctica
+            Nuestros Servicios Logísticos
           </h2>
           <p className="text-lg text-muted-foreground">
-            Contamos con especialistas en diversas áreas del derecho para
-            brindarle una asesoría integral y personalizada.
+            Ofrecemos soluciones integrales en manipulación de carga y logística
+            para optimizar sus operaciones y reducir costos.
           </p>
         </div>
 

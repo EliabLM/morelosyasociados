@@ -2,89 +2,89 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Briefcase, Building, FileText, Gavel, Scale, Shield, Users } from 'lucide-react';
+import { ArrowRight, Package, Warehouse, Truck, Settings, Shield, Clock } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { CTASection } from '@/components/sections/cta';
 
 const services = [
   {
-    title: 'Derecho Corporativo',
-    description: 'Asesoría integral en constitución de empresas, fusiones, adquisiciones, joint ventures y gobierno corporativo.',
-    icon: Building,
+    title: 'Manipulación de Carga',
+    description: 'Cargue y descargue de mercancías con personal capacitado y equipos especializados para garantizar la integridad de su producto.',
+    icon: Package,
     features: [
-      'Constitución de sociedades',
-      'Fusiones y adquisiciones',
-      'Due diligence',
-      'Gobierno corporativo',
-      'Contratos comerciales',
+      'Cargue y descargue de contenedores',
+      'Estiba y desestiba',
+      'Consolidación de carga',
+      'Desconsolidación',
+      'Paletización',
     ],
-    href: '/servicios/derecho-corporativo',
+    href: '/servicios/manipulacion-de-carga',
   },
   {
-    title: 'Derecho Laboral',
-    description: 'Representación y asesoría en conflictos laborales, contratos colectivos y cumplimiento normativo.',
-    icon: Users,
+    title: 'Almacenamiento',
+    description: 'Espacios seguros y organizados para el resguardo temporal o prolongado de su mercancía con control de inventario.',
+    icon: Warehouse,
     features: [
-      'Contratos individuales y colectivos',
-      'Despidos y liquidaciones',
-      'Juicios laborales',
-      'Auditorías laborales',
-      'Capacitación legal',
+      'Bodegaje general',
+      'Almacenamiento temporal',
+      'Control de inventarios',
+      'Picking y packing',
+      'Cross-docking',
     ],
-    href: '/servicios/derecho-laboral',
+    href: '/servicios/almacenamiento',
   },
   {
-    title: 'Derecho Fiscal',
-    description: 'Planificación fiscal estratégica, defensa ante autoridades y cumplimiento de obligaciones tributarias.',
-    icon: FileText,
+    title: 'Transporte y Distribución',
+    description: 'Servicio de transporte terrestre confiable para la distribución de su carga a nivel local y regional.',
+    icon: Truck,
     features: [
-      'Planeación fiscal',
-      'Defensa fiscal',
-      'Auditorías fiscales',
-      'Comercio exterior',
-      'Precios de transferencia',
+      'Transporte urbano',
+      'Distribución regional',
+      'Entregas programadas',
+      'Rutas optimizadas',
+      'Seguimiento en tiempo real',
     ],
-    href: '/servicios/derecho-fiscal',
+    href: '/servicios/transporte-distribucion',
   },
   {
-    title: 'Litigio Civil y Mercantil',
-    description: 'Representación en juicios civiles y mercantiles, arbitraje y métodos alternos de solución de controversias.',
-    icon: Gavel,
+    title: 'Logística Integral',
+    description: 'Soluciones completas que integran almacenamiento, manipulación y distribución para optimizar su cadena de suministro.',
+    icon: Settings,
     features: [
-      'Juicios ordinarios',
-      'Juicios ejecutivos',
-      'Arbitraje comercial',
-      'Mediación',
-      'Cobranza judicial',
+      'Gestión de cadena de suministro',
+      'Coordinación multimodal',
+      'Planificación logística',
+      'Optimización de costos',
+      'Reportes personalizados',
     ],
-    href: '/servicios/litigio-civil',
+    href: '/servicios/logistica-integral',
   },
   {
-    title: 'Propiedad Intelectual',
-    description: 'Registro y protección de marcas, patentes, derechos de autor y secretos industriales.',
+    title: 'Carga Especializada',
+    description: 'Manejo de mercancías que requieren cuidados especiales: frágiles, sobredimensionadas o de alto valor.',
     icon: Shield,
     features: [
-      'Registro de marcas',
-      'Patentes',
-      'Derechos de autor',
-      'Licenciamiento',
-      'Litigio de PI',
+      'Carga frágil',
+      'Carga sobredimensionada',
+      'Mercancía de alto valor',
+      'Equipos especializados',
+      'Personal certificado',
     ],
-    href: '/servicios/propiedad-intelectual',
+    href: '/servicios/carga-especializada',
   },
   {
-    title: 'Derecho Inmobiliario',
-    description: 'Contratos de compraventa, arrendamiento, fideicomisos y desarrollo inmobiliario.',
-    icon: Briefcase,
+    title: 'Servicios Express',
+    description: 'Atención prioritaria para operaciones urgentes con tiempos de respuesta reducidos.',
+    icon: Clock,
     features: [
-      'Compraventa inmobiliaria',
-      'Arrendamientos',
-      'Fideicomisos',
-      'Desarrollo inmobiliario',
-      'Due diligence',
+      'Respuesta inmediata',
+      'Disponibilidad 24/7',
+      'Prioridad en operaciones',
+      'Entregas mismo día',
+      'Coordinación urgente',
     ],
-    href: '/servicios/derecho-inmobiliario',
+    href: '/servicios/servicios-express',
   },
 ];
 
@@ -104,7 +104,7 @@ export default function ServiciosPage() {
               Nuestros <span className="text-primary">Servicios</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Ofrecemos una amplia gama de servicios legales especializados,
+              Ofrecemos una amplia gama de servicios logísticos especializados,
               adaptados a las necesidades específicas de cada cliente.
             </p>
           </motion.div>

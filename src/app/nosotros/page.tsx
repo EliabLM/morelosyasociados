@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, Clock, Target, Users, Linkedin, Mail } from 'lucide-react';
+import { Award, Package, Target, Users, Linkedin, Mail, Shield } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { TestimonialsSection } from '@/components/sections/testimonials';
@@ -9,57 +9,57 @@ import { CTASection } from '@/components/sections/cta';
 
 const values = [
   {
-    title: 'Excelencia',
-    description: 'Buscamos la perfección en cada caso, aplicando los más altos estándares profesionales.',
+    title: 'Eficiencia',
+    description: 'Optimizamos cada operación para entregar resultados en el menor tiempo posible.',
     icon: Award,
   },
   {
+    title: 'Seguridad',
+    description: 'Garantizamos la integridad de su carga con los más altos estándares de manejo.',
+    icon: Shield,
+  },
+  {
     title: 'Compromiso',
-    description: 'Nos dedicamos completamente a defender los intereses de nuestros clientes.',
+    description: 'Nos dedicamos completamente a satisfacer las necesidades logísticas de cada cliente.',
     icon: Target,
   },
   {
-    title: 'Integridad',
-    description: 'Actuamos con ética y transparencia en todas nuestras relaciones profesionales.',
-    icon: Users,
-  },
-  {
-    title: 'Experiencia',
-    description: 'Más de 25 años de trayectoria nos respaldan en cada asesoría legal.',
-    icon: Clock,
+    title: 'Confiabilidad',
+    description: 'Cumplimos con cada entrega, respetando tiempos y condiciones acordadas.',
+    icon: Package,
   },
 ];
 
 const team = [
   {
-    name: 'Lic. Roberto Morelos',
-    role: 'Socio Fundador',
-    specialty: 'Derecho Corporativo y Mercantil',
-    bio: 'Con más de 30 años de experiencia, ha liderado transacciones corporativas de alto perfil y asesorado a empresas Fortune 500.',
+    name: 'Roberto Morelos',
+    role: 'Gerente General',
+    specialty: 'Operaciones y Logística',
+    bio: 'Fundador de la empresa con amplia experiencia en el sector logístico portuario de Cartagena.',
     email: 'rmorelos@morelosyasociados.com',
     linkedin: '#',
   },
   {
-    name: 'Lic. María Fernández',
-    role: 'Socia',
-    specialty: 'Derecho Laboral',
-    bio: 'Especialista en relaciones laborales y litigio laboral, con amplia experiencia en restructuraciones empresariales.',
+    name: 'María Fernández',
+    role: 'Coordinadora de Operaciones',
+    specialty: 'Manipulación de Carga',
+    bio: 'Especialista en coordinación de equipos operativos y optimización de procesos de cargue y descargue.',
     email: 'mfernandez@morelosyasociados.com',
     linkedin: '#',
   },
   {
-    name: 'Lic. Carlos Ramírez',
-    role: 'Socio',
-    specialty: 'Derecho Fiscal',
-    bio: 'Experto en planificación fiscal y defensa ante autoridades tributarias, con especialidad en comercio internacional.',
+    name: 'Carlos Ramírez',
+    role: 'Jefe de Almacén',
+    specialty: 'Gestión de Inventarios',
+    bio: 'Experto en control de inventarios y administración de espacios de almacenamiento.',
     email: 'cramirez@morelosyasociados.com',
     linkedin: '#',
   },
   {
-    name: 'Lic. Ana García',
-    role: 'Asociada Senior',
-    specialty: 'Litigio Civil y Mercantil',
-    bio: 'Litigante destacada con alto índice de éxito en juicios civiles y mercantiles complejos.',
+    name: 'Ana García',
+    role: 'Coordinadora Comercial',
+    specialty: 'Atención al Cliente',
+    bio: 'Encargada de la relación con clientes y desarrollo de nuevas oportunidades de negocio.',
     email: 'agarcia@morelosyasociados.com',
     linkedin: '#',
   },
@@ -81,8 +81,8 @@ export default function NosotrosPage() {
               Sobre <span className="text-primary">Nosotros</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Somos una firma de abogados con más de 25 años de experiencia,
-              comprometidos con brindar soluciones legales de excelencia y un
+              Somos una empresa de logística y manipulación de carga con sede en
+              Cartagena, comprometidos con brindar soluciones eficientes y un
               servicio personalizado a cada uno de nuestros clientes.
             </p>
           </motion.div>
@@ -102,11 +102,10 @@ export default function NosotrosPage() {
             >
               <h2 className="text-3xl font-bold">Nuestra Misión</h2>
               <p className="text-muted-foreground">
-                Proporcionar servicios legales de la más alta calidad,
-                fundamentados en la ética profesional, el conocimiento
-                especializado y el compromiso inquebrantable con los intereses
-                de nuestros clientes, contribuyendo a su éxito y seguridad
-                jurídica.
+                Proporcionar servicios de manipulación de carga y logística de
+                la más alta calidad, fundamentados en la eficiencia operativa,
+                el conocimiento especializado y el compromiso inquebrantable con
+                la seguridad de la mercancía de nuestros clientes.
               </p>
             </motion.div>
 
@@ -119,10 +118,10 @@ export default function NosotrosPage() {
             >
               <h2 className="text-3xl font-bold">Nuestra Visión</h2>
               <p className="text-muted-foreground">
-                Ser reconocidos como la firma de abogados líder en México,
-                destacando por nuestra excelencia profesional, innovación en la
-                práctica legal y el impacto positivo en la comunidad empresarial
-                y social del país.
+                Ser reconocidos como la empresa líder en servicios logísticos en
+                Cartagena y la región Caribe, destacando por nuestra excelencia
+                operativa, innovación en procesos y el impacto positivo en la
+                cadena de suministro de nuestros clientes.
               </p>
             </motion.div>
           </div>
@@ -137,7 +136,7 @@ export default function NosotrosPage() {
               Nuestros Valores
             </h2>
             <p className="text-lg text-muted-foreground">
-              Los principios que guían nuestra práctica profesional y definen
+              Los principios que guían nuestras operaciones y definen
               nuestra relación con cada cliente.
             </p>
           </div>
@@ -176,8 +175,8 @@ export default function NosotrosPage() {
               Nuestro Equipo
             </h2>
             <p className="text-lg text-muted-foreground">
-              Un equipo de abogados altamente calificados y comprometidos con la
-              excelencia profesional.
+              Un equipo de profesionales altamente capacitados y comprometidos con la
+              excelencia operativa.
             </p>
           </div>
 

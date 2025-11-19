@@ -2,23 +2,23 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Award, Clock, Users } from 'lucide-react';
+import { ArrowRight, Award, Package, Truck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const stats = [
   {
-    value: '25+',
-    label: 'Años de Experiencia',
-    icon: Clock,
+    value: '1000+',
+    label: 'Operaciones Realizadas',
+    icon: Package,
   },
   {
-    value: '500+',
-    label: 'Clientes Satisfechos',
-    icon: Users,
+    value: '50+',
+    label: 'Clientes Activos',
+    icon: Truck,
   },
   {
-    value: '98%',
-    label: 'Casos Exitosos',
+    value: '99%',
+    label: 'Entregas a Tiempo',
     icon: Award,
   },
 ];
@@ -38,21 +38,19 @@ export function AboutPreviewSection() {
           >
             <h2 className="text-3xl md:text-4xl font-bold">
               Comprometidos con la{' '}
-              <span className="text-primary">Excelencia Legal</span>
+              <span className="text-primary">Excelencia Logística</span>
             </h2>
 
             <p className="text-lg text-muted-foreground">
-              En Morelos & Asociados, nos distinguimos por nuestro compromiso
-              con la calidad y la atención personalizada. Cada caso es único y
-              merece una estrategia legal diseñada específicamente para alcanzar
-              los mejores resultados.
+              En Morelos & Asociados S.A.S., nos distinguimos por nuestro compromiso
+              con la eficiencia y seguridad en cada operación. Cada carga es única y
+              merece un manejo especializado para garantizar su integridad.
             </p>
 
             <p className="text-muted-foreground">
-              Nuestro equipo de abogados combina años de experiencia con un
-              enfoque innovador, manteniéndonos a la vanguardia de las
-              prácticas legales modernas mientras preservamos los valores
-              tradicionales de la profesión.
+              Nuestro equipo combina experiencia operativa con tecnología moderna,
+              ofreciendo soluciones logísticas que optimizan tiempos y reducen costos
+              mientras mantenemos los más altos estándares de calidad en Cartagena.
             </p>
 
             <Button size="lg" asChild>

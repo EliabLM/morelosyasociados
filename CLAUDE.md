@@ -4,7 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the frontend for Morelos & Asociados, a Mexican law firm website. It's a Next.js 16 application with App Router, TypeScript, Tailwind CSS v4, and Sanity CMS integration.
+This is the frontend for Morelos & Asociados S.A.S., a Colombian logistics company specializing in cargo handling (manipulación de carga) based in Cartagena, Bolívar. It's a Next.js 16 application with App Router, TypeScript, Tailwind CSS v4, and Sanity CMS integration.
+
+**Company Info:**
+- NIT: 901438331-2
+- Location: Cartagena, Bolívar, Colombia
+- Industry: Logistics / Cargo Handling
 
 ## Development Commands
 
@@ -75,4 +80,4 @@ import { cn } from '@/lib/utils';
 
 ### Language
 
-This is a Spanish-language website for Mexican users. Content, page routes, and UI text are in Spanish.
+This is a Spanish-language website for Colombian users. Content, page routes, and UI text are in Spanish (es_CO locale).

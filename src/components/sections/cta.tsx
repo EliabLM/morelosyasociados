@@ -18,12 +18,12 @@ export function CTASection() {
           className="text-center max-w-3xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            ¿Necesita Asesoría Legal?
+            ¿Necesita Soluciones Logísticas?
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-8">
-            Contáctenos hoy para una consulta inicial. Nuestro equipo de
-            expertos está listo para ayudarle a resolver sus asuntos legales
-            de manera efectiva y profesional.
+            Contáctenos hoy para una cotización personalizada. Nuestro equipo
+            está listo para optimizar sus operaciones de carga y distribución
+            de manera eficiente y segura.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -33,7 +33,7 @@ export function CTASection() {
               asChild
             >
               <Link href="/contacto">
-                Agendar Consulta
+                Solicitar Cotización
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

@@ -90,8 +90,8 @@ export default function ContactoPage() {
               <span className="text-primary">Contáctenos</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Estamos aquí para ayudarle. Envíenos su consulta y nos pondremos
-              en contacto con usted a la brevedad posible.
+              Estamos aquí para ayudarle con sus necesidades logísticas. Solicite
+              su cotización y nos pondremos en contacto con usted a la brevedad.
             </p>
           </motion.div>
         </div>
@@ -151,7 +151,7 @@ export default function ContactoPage() {
                         <Input
                           id="phone"
                           type="tel"
-                          placeholder="(55) 1234-5678"
+                          placeholder="300 123 4567"
                           {...register('phone')}
                         />
                       </div>
@@ -208,7 +208,7 @@ export default function ContactoPage() {
                 <h2 className="text-2xl font-bold mb-6">Información de contacto</h2>
                 <p className="text-muted-foreground mb-8">
                   No dude en contactarnos por cualquiera de estos medios. Nuestro
-                  equipo está listo para atenderle y resolver sus dudas.
+                  equipo está listo para atenderle y cotizar sus operaciones.
                 </p>
               </div>
 

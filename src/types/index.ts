@@ -4,9 +4,19 @@ export interface SiteConfig {
   description: string;
   url: string;
   ogImage: string;
+  nit?: string;
   links: {
-    twitter: string;
-    github: string;
+    facebook?: string;
+    instagram?: string;
+    linkedin?: string;
+    whatsapp?: string;
+    twitter?: string;
+    github?: string;
+  };
+  contact?: {
+    email: string;
+    phone: string;
+    address: string;
   };
 }
 

@@ -7,23 +7,23 @@ import { Card, CardContent } from '@/components/ui/card';
 const testimonials = [
   {
     name: 'Carlos Mendoza',
-    company: 'Tech Solutions S.A.',
-    role: 'Director General',
-    content: 'El equipo de Morelos & Asociados nos brindó una asesoría excepcional en la reestructuración de nuestra empresa. Su profesionalismo y conocimiento del derecho corporativo son incomparables.',
+    company: 'Importadora del Caribe S.A.S.',
+    role: 'Gerente de Operaciones',
+    content: 'El equipo de Morelos & Asociados ha sido fundamental para nuestras operaciones portuarias. Su profesionalismo en la manipulación de carga y tiempos de respuesta son excepcionales.',
     rating: 5,
   },
   {
     name: 'María García',
-    company: 'Grupo Inmobiliario MG',
-    role: 'CEO',
-    content: 'Gracias a su experiencia en derecho inmobiliario, pudimos cerrar una adquisición compleja sin contratiempos. Recomiendo ampliamente sus servicios.',
+    company: 'Distribuidora Costa Norte',
+    role: 'Directora Logística',
+    content: 'Gracias a su servicio de almacenamiento y distribución, hemos optimizado nuestra cadena de suministro significativamente. Totalmente recomendados.',
     rating: 5,
   },
   {
     name: 'Roberto Hernández',
-    company: 'Manufacturas RH',
-    role: 'Presidente',
-    content: 'Su apoyo en temas laborales ha sido fundamental para nuestra empresa. Siempre disponibles y con soluciones prácticas a problemas complejos.',
+    company: 'Comercializadora Bolívar',
+    role: 'Gerente General',
+    content: 'Su atención al manejo de carga especializada ha sido impecable. Siempre disponibles y con soluciones efectivas para nuestras necesidades logísticas.',
     rating: 5,
   },
 ];

@@ -50,7 +50,7 @@ export function Header() {
             </a>
           </Button>
           <Button size='sm' asChild>
-            <Link href='/contacto'>Agendar Consulta</Link>
+            <Link href='/contacto'>Cotizar</Link>
           </Button>
         </div>
 
@@ -88,7 +88,7 @@ export function Header() {
                 </Button>
                 <Button className='w-full' asChild>
                   <Link href='/contacto' onClick={() => setIsOpen(false)}>
-                    Agendar Consulta
+                    Cotizar
                   </Link>
                 </Button>
               </div>
