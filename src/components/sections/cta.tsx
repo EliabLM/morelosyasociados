@@ -40,7 +40,7 @@ export function CTASection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+              className="border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
               asChild
             >
               <a href={`tel:${siteConfig.contact.phone}`}>
