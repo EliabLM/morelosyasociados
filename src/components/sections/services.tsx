@@ -1,7 +1,8 @@
 'use client';
 
+import { useRef } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Package, Warehouse, Truck, Settings, Shield, Clock } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -45,48 +46,92 @@ const services = [
   },
 ];
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
+// Animation variants for the container
+const containerVariants = {
+  hidden: { opacity: 1 },
+  visible: {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
+      delayChildren: 0.05,
     },
   },
 };
 
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
+// Animation variants for each card item
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 20
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut' as const,
+    },
+  },
 };
 
 export function ServicesSection() {
+  // Use a ref to track the container element
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // useInView hook provides reliable viewport detection that properly resets on navigation
+  // The 'once: true' option ensures the animation only plays once per mount
+  // 'margin' option triggers the animation slightly before the element is fully in view
+  const isInView = useInView(containerRef, {
+    once: true,
+    margin: '-50px 0px -50px 0px'
+  });
+
   return (
     <section className="py-20 md:py-32 bg-muted/50">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+          >
             Nuestros Servicios Logísticos
-          </h2>
-          <p className="text-lg text-muted-foreground">
+          </motion.h2>
+          <motion.p
+            className="text-lg text-muted-foreground"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
+          >
             Ofrecemos soluciones integrales en manipulación de carga y logística
             para optimizar sus operaciones y reducir costos.
-          </p>
+          </motion.p>
         </div>
 
+        {/*
+          Using ref + useInView + animate pattern instead of whileInView
+          This ensures proper animation reset on client-side navigation
+        */}
         <motion.div
-          variants={container}
+          ref={containerRef}
+          variants={containerVariants}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
+          animate={isInView ? 'visible' : 'hidden'}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {services.map((service) => (
-            <motion.div key={service.title} variants={item}>
-              <Card className="h-full hover:shadow-lg transition-shadow group">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              variants={itemVariants}
+              // Adding custom delay based on index ensures correct stagger order
+              // even if there are any edge cases with the parent stagger
+              custom={index}
+            >
+              <Card className="h-full hover:shadow-lg transition-shadow duration-300 group">
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                    <service.icon className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                    <service.icon className="h-6 w-6 text-primary" aria-hidden="true" />
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                 </CardHeader>
@@ -96,10 +141,11 @@ export function ServicesSection() {
                   </CardDescription>
                   <Link
                     href={service.href}
-                    className="text-sm font-medium text-primary hover:underline inline-flex items-center"
+                    className="text-sm font-medium text-primary hover:underline inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                    aria-label={`Conocer más sobre ${service.title}`}
                   >
                     Conocer más
-                    <ArrowRight className="ml-1 h-4 w-4" />
+                    <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
                   </Link>
                 </CardContent>
               </Card>
@@ -107,14 +153,19 @@ export function ServicesSection() {
           ))}
         </motion.div>
 
-        <div className="text-center mt-12">
+        <motion.div
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.7 }}
+        >
           <Button size="lg" variant="outline" asChild>
             <Link href="/servicios">
               Ver todos los servicios
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
             </Link>
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

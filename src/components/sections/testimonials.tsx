@@ -1,8 +1,32 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+
+const containerVariants = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut' as const,
+    },
+  },
+};
 
 const testimonials = [
   {
@@ -29,6 +53,12 @@ const testimonials = [
 ];
 
 export function TestimonialsSection() {
+  const testimonialsRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(testimonialsRef, {
+    once: true,
+    margin: '-50px 0px -50px 0px'
+  });
+
   return (
     <section className="py-20 md:py-32 bg-muted/50">
       <div className="container">
@@ -42,14 +72,17 @@ export function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
+        <motion.div
+          ref={testimonialsRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {testimonials.map((testimonial) => (
             <motion.div
               key={testimonial.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              variants={itemVariants}
             >
               <Card className="h-full">
                 <CardContent className="pt-6">
@@ -75,7 +108,7 @@ export function TestimonialsSection() {
               </Card>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

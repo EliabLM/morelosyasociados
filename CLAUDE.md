@@ -81,3 +81,37 @@ import { cn } from '@/lib/utils';
 ### Language
 
 This is a Spanish-language website for Colombian users. Content, page routes, and UI text are in Spanish (es_CO locale).
+
+## Mandatory Documentation Lookup (Context7 MCP)
+
+**CRITICAL REQUIREMENT**: Before making ANY code changes, you MUST use the Context7 MCP tools to retrieve up-to-date documentation for the relevant libraries and frameworks.
+
+### Required Workflow:
+
+1. **Before any code modification**, use `mcp__context7__resolve-library-id` to find the library ID
+2. **Then use `mcp__context7__get-library-docs`** to fetch current documentation
+3. Only after reviewing the documentation, proceed with implementation
+
+### When to Use Context7:
+
+- **Next.js changes**: Fetch docs for routing, metadata, API routes, server components
+- **Tailwind CSS changes**: Fetch docs for v4 syntax, utilities, responsive design
+- **Framer Motion**: Fetch docs for animations, variants, gestures
+- **React Hook Form + Zod**: Fetch docs for form validation patterns
+- **Sanity CMS**: Fetch docs for GROQ queries, client configuration
+- **Radix UI**: Fetch docs for accessibility patterns, component APIs
+- **Any new library**: Always fetch documentation first
+
+### Example Workflow:
+
+```
+1. User requests: "Add a new animated modal component"
+2. Agent MUST:
+   - mcp__context7__resolve-library-id("Framer Motion")
+   - mcp__context7__get-library-docs with topic "modal animation variants"
+   - mcp__context7__resolve-library-id("Radix UI Dialog")
+   - mcp__context7__get-library-docs with topic "dialog accessibility"
+3. Only then implement the component with current best practices
+```
+
+This ensures all implementations follow the latest documentation and best practices, avoiding deprecated patterns or outdated syntax.

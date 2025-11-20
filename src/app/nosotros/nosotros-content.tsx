@@ -1,11 +1,35 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Award, Package, Target, Users, Linkedin, Mail, Shield } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { TestimonialsSection } from '@/components/sections/testimonials';
 import { CTASection } from '@/components/sections/cta';
+
+const containerVariants = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut' as const,
+    },
+  },
+};
 
 const values = [
   {
@@ -66,6 +90,17 @@ const team = [
 ];
 
 export function NosotrosContent() {
+  const valuesRef = useRef<HTMLDivElement>(null);
+  const teamRef = useRef<HTMLDivElement>(null);
+  const valuesInView = useInView(valuesRef, {
+    once: true,
+    margin: '-50px 0px -50px 0px'
+  });
+  const teamInView = useInView(teamRef, {
+    once: true,
+    margin: '-50px 0px -50px 0px'
+  });
+
   return (
     <>
       {/* Hero Section */}
@@ -141,14 +176,17 @@ export function NosotrosContent() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => (
+          <motion.div
+            ref={valuesRef}
+            variants={containerVariants}
+            initial="hidden"
+            animate={valuesInView ? 'visible' : 'hidden'}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {values.map((value) => (
               <motion.div
                 key={value.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                variants={itemVariants}
               >
                 <Card className="h-full text-center">
                   <CardContent className="pt-6">
@@ -163,7 +201,7 @@ export function NosotrosContent() {
                 </Card>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -180,14 +218,17 @@ export function NosotrosContent() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {team.map((member, index) => (
+          <motion.div
+            ref={teamRef}
+            variants={containerVariants}
+            initial="hidden"
+            animate={teamInView ? 'visible' : 'hidden'}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
+            {team.map((member) => (
               <motion.div
                 key={member.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                variants={itemVariants}
               >
                 <Card className="h-full">
                   <CardContent className="pt-6">
@@ -224,7 +265,7 @@ export function NosotrosContent() {
                 </Card>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 

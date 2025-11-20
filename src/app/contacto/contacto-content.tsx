@@ -216,21 +216,21 @@ export function ContactoContent() {
                 {contactInfo.map((item) => (
                   <Card key={item.title}>
                     <CardContent className="pt-6">
-                      <div className="flex items-start gap-4">
+                      <div className="flex items-start gap-4 min-w-0">
                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                           <item.icon className="h-5 w-5 text-primary" />
                         </div>
-                        <div>
+                        <div className="min-w-0 flex-1">
                           <p className="font-medium mb-1">{item.title}</p>
                           {item.href !== '#' ? (
                             <a
                               href={item.href}
-                              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                              className="text-sm text-muted-foreground hover:text-primary transition-colors break-all"
                             >
                               {item.value}
                             </a>
                           ) : (
-                            <p className="text-sm text-muted-foreground">{item.value}</p>
+                            <p className="text-sm text-muted-foreground break-words">{item.value}</p>
                           )}
                         </div>
                       </div>

@@ -1,11 +1,35 @@
 'use client';
 
+import { useRef } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Package, Warehouse, Truck, Settings, Shield, Clock } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { CTASection } from '@/components/sections/cta';
+
+const containerVariants = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut' as const,
+    },
+  },
+};
 
 const services = [
   {
@@ -89,6 +113,12 @@ const services = [
 ];
 
 export function ServiciosContent() {
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(servicesRef, {
+    once: true,
+    margin: '-50px 0px -50px 0px'
+  });
+
   return (
     <>
       {/* Hero Section */}
@@ -114,14 +144,17 @@ export function ServiciosContent() {
       {/* Services Grid */}
       <section className="py-20 md:py-32">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {services.map((service, index) => (
+          <motion.div
+            ref={servicesRef}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          >
+            {services.map((service) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                variants={itemVariants}
               >
                 <Card className="h-full hover:shadow-lg transition-shadow">
                   <CardHeader>
@@ -156,7 +189,7 @@ export function ServiciosContent() {
                 </Card>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
